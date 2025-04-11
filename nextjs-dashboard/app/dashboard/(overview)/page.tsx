@@ -5,7 +5,12 @@ import { lusitana } from '@/app/ui/fonts';
 import {  fetchCardData} from '@/app/lib/data';
 import { LatestInvoicesSkeleton, RevenueChartSkeleton, CardSkeleton } from '@/app/ui/skeletons';
 import { Suspense } from 'react';
- 
+import {Metadata} from 'next';
+
+export const metadata: Metadata = {
+  title: 'Dashboard',
+};
+
 export default async function DashboardPage() {
     const {totalPaidInvoices, totalPendingInvoices, numberOfInvoices, numberOfCustomers} = await fetchCardData();
 
